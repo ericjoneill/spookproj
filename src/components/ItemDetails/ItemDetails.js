@@ -184,7 +184,10 @@ class ItemDetails extends Component {
               </div>
 
               <p className="item-details-header-info-container-content__detail">{this.props.peopleDetails ? `${this.props.peopleDetails.gender === 1 ? 'Female' : 'Male'}` : ''} | {this.props.peopleDetails ? this.props.peopleDetails.known_for_department : ''}</p>
-              <p className="item-details-header-info-container-content__genre">{this.props.peopleDetails.birthday ? this.formatYearOfBirth(this.props.peopleDetails.birthday) + ' | Age: ' +  this.findAge(this.props.peopleDetails.birthday) : 'Age: Unknown'}</p>
+              <p className="item-details-header-info-container-content__genre">{this.props.peopleDetails.birthday ? 'Date of Birth: ' + this.formatYearOfBirth(this.props.peopleDetails.birthday) + ' | Age: ' +  this.findAge(this.props.peopleDetails.birthday) : 'Age: Unknown'}</p>
+
+              {/* <p className = "item-details-header-info-container-content">{this.props.peopleDetails.name + ', born ' + this.props.peopleDetails.birthday + ', ' + ' has spent ' + `${this.props.peopleDetails.gender === 1 ? 'her' : 'his'}` + ' professional career ' + this.props.peopleDetails.known_for_department + '.'}</p> */}
+
 
             </div>
 
