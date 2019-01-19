@@ -130,8 +130,8 @@ class ItemDetails extends Component {
                 <p className="item-details-header-info-container-content-rating__digit">{this.props.movieDetails ? this.props.movieDetails.vote_average : ''}</p>
                 <StarRating className="item-details-header-info-container-content-rating__stars" rating={this.props.movieDetails ? this.props.movieDetails.vote_average : ''} itemType="movie" itemId={this.props.movieDetails.id}/>
               </div>
-
-              <p className="item-details-header-info-container-content__detail">{this.props.movieDetails ? this.props.movieDetails.status : ''} | {this.props.movieDetails.original_language ? this.props.movieDetails.original_language.toUpperCase(): ''}</p>
+              {/* this.props.movieDetails.status */}
+              <p className="item-details-header-info-container-content__detail">{(this.props.movieDetails.status === 'Released' ? 'Now Playing' : 'Coming soon')} | {this.props.movieDetails.original_language ? this.props.movieDetails.original_language.toUpperCase(): ''}</p>
               <p className="item-details-header-info-container-content__genre">{this.props.movieDetails.genres ? `${this.props.movieDetails.genres[0] ? this.props.movieDetails.genres[0].name : ''}` + `${this.props.movieDetails.genres[1] ? ' | ' + this.props.movieDetails.genres[1].name : ''}`: ''}</p>
 
               <svg onClick={(e) => {this.handleFavoriteItem(e, this.props.userDetails.id, this.props.apiKey, this.props.session.session_id, 'movie', this.props.movieDetails.id)}} className="item-details-header-info-container-content__favorite wow pulse" data-wow-delay=".5s" data-wow-duration="2s" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 448l-30.164-27.211C118.718 322.442 48 258.61 48 179.095 48 114.221 97.918 64 162.4 64c36.399 0 70.717 16.742 93.6 43.947C278.882 80.742 313.199 64 349.6 64 414.082 64 464 114.221 464 179.095c0 79.516-70.719 143.348-177.836 241.694L256 448z"/></svg>
